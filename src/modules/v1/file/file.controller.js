@@ -1,5 +1,10 @@
 const errorDecorator = require('../../../util/error-decorator/error-decorator.util');
-const service = require('./test.service');
+const service = require('./file.service');
+
+const post = errorDecorator(async (req, _res, next) => {
+    const data = await service.post();
+    next(data);
+});
 
 const get = errorDecorator(async (req, _res, next) => {
     const data = await service.get();
@@ -7,5 +12,6 @@ const get = errorDecorator(async (req, _res, next) => {
 });
 
 module.exports = {
-    get,
+    post,
+    get
 };

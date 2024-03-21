@@ -9,5 +9,6 @@ const config = {
         MORGAN_LOG_LEVEL: process.env.MORGAN_LOG_LEVEL || 'combined',
         SILENT_LOGGER: process.env.SILENT_LOGGER || false,
     },
+    ELASTIC: process.env.ELASTIC || { node: 'http://localhost:9200' }
 };
 module.exports = config;
